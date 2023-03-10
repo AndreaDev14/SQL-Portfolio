@@ -8,7 +8,7 @@ Hi, this repository is a compilation of SQL, Tableau and related projects
 
 # Projects 
 
-## [Covid Analysis]( https://github.com/AndreaDev14/SQL-Portfolio) - SQL Data Exploration
+## [Covid Analysis](https://github.com/AndreaDev14/SQL-Portfolio/tree/main/Covid%20Analysis%202021) - SQL Data Exploration
 Data analysis project based on the covid collected data
 - Perform data exploration through Microsoft SQL from the collected data
 - Cleaning the data with  Microsoft Excel
