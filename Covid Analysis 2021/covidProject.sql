@@ -9,13 +9,13 @@ SELECT DISTINCT(continent) FROM portfolioSQL..CovidDeaths
 --ORDER BY 3,4
 
 -- Select Data that we are going to be starting with
-Select Location, date, total_cases, new_cases, total_deaths, population
+SELECT Location, date, total_cases, new_cases, total_deaths, population
 From portfolioSQL..CovidDeaths 
 ORDER BY 1,2
 
 -- Total Cases vs Total Deaths
 -- Shows likelihood of dying if you contract covid in Argentina 2021
-Select Location, date, total_cases,total_deaths, (total_deaths/total_cases)*100 as DeathPercentage
+SELECT Location, date, total_cases,total_deaths, (total_deaths/total_cases)*100 as DeathPercentage
 From portfolioSQL..CovidDeaths 
 WHERE location LIKE '%Argentina%' 
 ORDER BY 1,2
@@ -51,7 +51,7 @@ GROUP BY location
 ORDER BY TotalDeathCount DESC
 
 -- GLOBAL NUMBERS - CASES DAILY
-Select date, SUM(new_cases) as total_cases, SUM(cast(new_deaths as int)) as total_deaths, SUM(cast(new_deaths as int))/SUM(New_Cases)*100 as DeathPercentage
+SELECT date, SUM(new_cases) as total_cases, SUM(cast(new_deaths as int)) as total_deaths, SUM(cast(new_deaths as int))/SUM(New_Cases)*100 as DeathPercentage
 From portfolioSQL..CovidDeaths
 WHERE continent IS NOT NULL 
  Group By date
