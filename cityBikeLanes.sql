@@ -91,7 +91,19 @@ FROM safety_average_cte
 WHERE avg_safety_rating >= 4;
 
 -- Query without CTE
-SELECT street, AVG(safetyrating) as 'rating'
+SELECT street, AVG(safetyrating) as 'rating',  'Safe Lane' AS 'label'
 FROM Citybikelanes
 GROUP BY street
 having rating >=4
+
+/*a list of all the bike lanes, both safety ratings for each lane, the average safety rating for each lane, 
+and a label with the recommendation as "Remove", "Leave As-Is", or "Improvements Needed".*/
+SELECT street, safetyrating,
+AVG(safetyrating) OVER (PARTITION BY street) AS 'Average_safety_rating',
+CASE
+	WHEN AVG(safetyrating) OVER (PARTITION BY street) >= 4 THEN 'Leave As-Is'
+	WHEN AVG(safetyrating) OVER (PARTITION BY street) <= 2.5 THEN 'Remove'
+	ELSE 'Improvements Needed'
+END AS 'Recommendation'
+FROM CityBikeLanes
+
