@@ -1,5 +1,5 @@
+/*City Bike Lanes*/
 /*Create Table*/
-
 CREATE TABLE BIT_DB.CityBikeLanes (
 id integer primary key,
 year_installed year not null,
