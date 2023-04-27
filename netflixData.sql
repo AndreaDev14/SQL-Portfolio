@@ -2,7 +2,7 @@
 /*
 PostgreSQL query
 Netflix Data
-- In this SQL code, I'm querying a database that's holding Nexflix data to answer questions about the data.
+- In this SQL code, I'm querying a database that's holding Netflix data to answer questions about the data.
 */
 
 /*JOIN two tables*/
