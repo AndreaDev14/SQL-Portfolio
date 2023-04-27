@@ -105,5 +105,5 @@ CASE
 	WHEN AVG(safetyrating) OVER (PARTITION BY street) <= 2.5 THEN 'Remove'
 	ELSE 'Improvements Needed'
 END AS 'Recommendation'
-FROM CityBikeLanes
+FROM CityBikeLanes;
 
